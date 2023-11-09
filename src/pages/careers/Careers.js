@@ -10,7 +10,7 @@ const Careers = () => {
 			aperiam labore facilis doloribus consequatur odio maxime quis ex error
 			vero autem?
 			{data.map((option) => (
-				<Link to="/" key={option.id}>
+				<Link to={option.id.toString()} key={option.id}>
 					<p>{option.title}</p>
 					<p>Location: {option.location}</p>
 				</Link>
