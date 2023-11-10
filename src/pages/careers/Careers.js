@@ -23,5 +23,9 @@ export default Careers;
 
 export const careerLoader = async () => {
 	const response = await fetch(" http://localhost:4000/careers");
+
+	if (!response.ok) {
+		throw Error("Could not fetch all the careers");
+	}
 	return response.json();
 };

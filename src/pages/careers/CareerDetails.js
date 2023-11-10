@@ -23,6 +23,10 @@ export const careerDetailsLoader = async ({ params }) => {
 		const { id } = params;
 
 		const response = await fetch("http://localhost:4000/careers/" + id);
+
+		if (!response.ok) {
+			throw Error("Could not find the details of the career");
+		}
 		return response.json();
 	} catch (error) {
 		console.log("Error fetching the data:", error);
